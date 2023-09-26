@@ -9,7 +9,7 @@ rr = pd.read_excel('C:/Users/marce/Documents/Python/SWD/Email Response/Email.xls
 
 # CREATE LABEL FOR X AXIS AND COUNTER SERIES FOR USE WITH REGRESSION
 rr['xlabel'] = rr['Quarter'].str.slice(0, 2) + '<br>' + rr['Quarter'].str.slice(5, 7)
-rr['xCounter'] = range(0, 9)
+rr['xCounter'] = range(0, len(rr))
 
 # COMPUTE REGRESSION COEFFICIENTS
 model1 = sm.OLS(rr['Response Rate'], sm.add_constant(rr['xCounter']))
